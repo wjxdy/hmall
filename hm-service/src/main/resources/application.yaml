@@ -10,13 +10,20 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${hm.db.pw}
+# 配置MyBatis的日志输出
 mybatis-plus:
+  #xml文件路径
+  mapperLocations: classpath*:/mapper/*Mapper.xml
+  #别名包路径
+  typeAliasesPackage: com.hmall.**.po
   configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true    # 开启驼峰命名
     default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
   global-config:
     db-config:
-      update-strategy: not_null
       id-type: auto
+
 logging:
   level:
     com.hmall: debug
@@ -24,21 +31,29 @@ logging:
     dateformat: HH:mm:ss:SSS
   file:
     path: "logs/${spring.application.name}"
+
+# Springdoc配置
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+  group-configs:
+    - group: 'hmall'
+      display-name: '黑马商城'
+      paths-to-match: '/**'
+      packages-to-scan: com.hmall.controller
 knife4j:
   enable: true
-  openapi:
-    title: 黑马商城接口文档
-    description: "黑马商城接口文档"
-    email: zhanghuyi@itcast.cn
-    concat: 虎哥
-    url: https://www.itcast.cn
-    version: v1.0.0
-    group:
-      default:
-        group-name: default
-        api-rule: package
-        api-rule-resources:
-          - com.hmall.controller
+  production: false
+  basic:
+    enable: false
+    username: hmall
+    password: 123456
+  setting:
+    swagger-model-name: 实体类列表
 hm:
   jwt:
     location: classpath:hmall.jks

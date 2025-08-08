@@ -1,6 +1,4 @@
 package com.hmall.common.domain;
-
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
