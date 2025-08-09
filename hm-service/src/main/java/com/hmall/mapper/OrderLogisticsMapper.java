@@ -8,8 +8,8 @@ import com.hmall.domain.po.OrderLogistics;
  *  Mapper 接口
  * </p>
  *
- * @author 虎哥
- * @since 2023-05-05
+ * @author itheima
+ * @since 2025-08-08
  */
 public interface OrderLogisticsMapper extends BaseMapper<OrderLogistics> {
 

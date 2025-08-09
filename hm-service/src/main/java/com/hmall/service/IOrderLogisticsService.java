@@ -8,8 +8,8 @@ import com.hmall.domain.po.OrderLogistics;
  *  服务类
  * </p>
  *
- * @author 虎哥
- * @since 2023-05-05
+ * @author itheima
+ * @since 2025-08-08
  */
 public interface IOrderLogisticsService extends IService<OrderLogistics> {
 
