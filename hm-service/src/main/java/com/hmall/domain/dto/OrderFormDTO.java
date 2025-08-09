@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@Schema(description = "交易下单表单实体")
+@Schema(name ="交易下单表单实体")
 public class OrderFormDTO {
     @Schema(title="收货地址id")
     private Long addressId;

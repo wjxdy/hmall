@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * </p>
  */
 @Data
-@Schema(description = "支付单vo实体")
+@Schema(name ="支付单vo实体")
 public class PayOrderVO {
     @Schema(title="id")
     private Long id;

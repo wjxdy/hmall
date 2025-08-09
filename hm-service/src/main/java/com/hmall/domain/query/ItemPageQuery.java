@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Schema(description = "商品分页查询条件")
+@Schema(name ="商品分页查询条件")
 public class ItemPageQuery extends PageQuery {
     @Schema(title="搜索关键字")
     private String key;

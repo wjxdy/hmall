@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 @Data
 @Builder
-@Schema(description = "支付确认表单实体")
+@Schema(name ="支付确认表单实体")
 public class PayOrderFormDTO {
     @Schema(title="支付订单id不能为空")
     @NotNull(message = "支付订单id不能为空")

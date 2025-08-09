@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Schema(description = "订单页面VO")
+@Schema(name ="订单页面VO")
 public class OrderVO {
     @Schema(title="订单id")
     private Long id;

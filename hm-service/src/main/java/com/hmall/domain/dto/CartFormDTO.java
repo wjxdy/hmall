@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(description = "新增购物车商品表单实体")
+@Schema(name ="新增购物车商品表单实体")
 public class CartFormDTO {
     @Schema(title="商品id")
     private Long itemId;

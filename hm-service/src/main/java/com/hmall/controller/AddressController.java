@@ -34,7 +34,7 @@ public class AddressController {
 
     private final IAddressService addressService;
 
-    @Operation(description = "根据id查询地址")
+    @Operation(summary = "根据id查询地址")
     @GetMapping("{addressId}")
     public AddressDTO findAddressById(@Parameter(description = "地址id") @PathVariable("addressId") Long id) {
         // 1.根据id查询
@@ -46,7 +46,7 @@ public class AddressController {
         }
         return BeanUtils.copyBean(address, AddressDTO.class);
     }
-    @Operation(description = "查询当前用户地址列表")
+    @Operation(summary = "查询当前用户地址列表")
     @GetMapping
     public List<AddressDTO> findMyAddresses() {
         // 1.查询列表

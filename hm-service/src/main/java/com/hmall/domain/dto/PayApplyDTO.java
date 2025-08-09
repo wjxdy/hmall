@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 @Data
 @Builder
-@Schema(description = "支付下单表单实体")
+@Schema(name ="支付下单表单实体")
 public class PayApplyDTO {
     @Schema(title="业务订单id不能为空")
     @NotNull(message = "业务订单id不能为空")

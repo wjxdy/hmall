@@ -3,7 +3,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 @Data
-@Schema(description = "登录表单实体")
+@Schema(name ="登录表单实体")
 public class LoginFormDTO {
     @Schema(title = "用户名", required = true)
     @NotNull(message = "用户名不能为空")

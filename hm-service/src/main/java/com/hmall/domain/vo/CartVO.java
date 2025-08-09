@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @since 2025-08-08
  */
 @Data
-@Schema(description = "购物车VO实体")
+@Schema(name ="购物车VO实体")
 public class CartVO {
     @Schema(title="购物车条目id ")
     private Long id;
