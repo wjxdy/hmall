@@ -49,6 +49,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (user.getStatus() == UserStatus.FROZEN) {
             throw new ForbiddenException("用户被冻结");
         }
+        System.out.println(passwordEncoder.encode("123456"));
         // 4.校验密码
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BadRequestException("用户名或密码错误");

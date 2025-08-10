@@ -19,13 +19,13 @@ public class UserController {
 
     private final IUserService userService;
 
-    @Operation(description="用户登录接口")
+    @Operation(summary="用户登录接口")
     @PostMapping("login")
     public UserLoginVO login(@RequestBody @Validated LoginFormDTO loginFormDTO){
         return userService.login(loginFormDTO);
     }
 
-    @Operation(description="扣减余额")
+    @Operation(summary="扣减余额")
     @Parameters({
             @Parameter(name = "pw",description = "支付密码"),
             @Parameter(name = "amount",description = "支付金额")

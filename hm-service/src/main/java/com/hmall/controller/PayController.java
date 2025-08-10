@@ -19,7 +19,7 @@ public class PayController {
 
     private final IPayOrderService payOrderService;
 
-    @Operation(description="生成支付单")
+    @Operation(summary="生成支付单")
     @PostMapping
     public String applyPayOrder(@RequestBody PayApplyDTO applyDTO){
         if(!PayType.BALANCE.equalsValue(applyDTO.getPayType())){
@@ -29,7 +29,7 @@ public class PayController {
         return payOrderService.applyPayOrder(applyDTO);
     }
 
-    @Operation(description="尝试基于用户余额支付")
+    @Operation(summary="尝试基于用户余额支付")
     @Parameter(description = "支付单id", name = "id")
     @PostMapping("{id}")
     public void tryPayOrderByBalance(@PathVariable("id") Long id, @RequestBody PayOrderFormDTO payOrderFormDTO){

@@ -23,7 +23,7 @@ public class SearchController {
 
     private final IItemService itemService;
 
-    @Operation(description="搜索商品")
+    @Operation(summary="搜索商品")
     @GetMapping("/list")
     public PageDTO<ItemDTO> search(ItemPageQuery query) {
         // 分页查询
