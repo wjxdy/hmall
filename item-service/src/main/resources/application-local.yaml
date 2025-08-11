@@ -1,0 +1,13 @@
+hm:
+  db:
+    host: 47.99.112.175 # 修改为你自己的虚拟机IP地址
+    pw: Xulei20040831 # 修改为docker中的MySQL密码
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.99.112.175:8848  # 修正为全小写 server-addr
+        username: xulei
+        password: xuleixulei
+  application:
+    name: item-service  # 服务名必须配置，作为 Nacos 服务标识
