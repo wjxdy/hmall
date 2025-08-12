@@ -9,7 +9,6 @@ import com.hmall.common.utils.UserContext;
 import com.hmall.domain.dto.PayApplyDTO;
 import com.hmall.domain.dto.PayOrderFormDTO;
 import com.hmall.domain.po.Order;
-import com.hmall.domain.po.PayOrder;
 import com.hmall.enums.PayStatus;
 import com.hmall.mapper.PayOrderMapper;
 import com.hmall.service.IOrderService;

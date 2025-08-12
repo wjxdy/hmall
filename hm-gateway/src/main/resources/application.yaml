@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hm-gateway
+  profiles:
+    active: local
+  main:
+    web-application-type: REACTIVE
+  cloud:
+    gateway:
+      routes:
+        - id: item
+          uri: lb://item-service
+          predicates:
+            - Path=/items/**,/search/**
+
+        - id: cart
+          uri: lb://cart-service
+          predicates:
+            - Path=/carts/**
+          filters:
+            - AddRequestHeader=key, value
+
+        - id: pay
+          uri: lb://pay-service
+          predicates:
+            - Path=/pay-orders/**
+
+        - id: trade
+          uri: lb://trade-service
+          predicates:
+            - Path=/orders/**
+
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/addresses/**,/users/**
+      default-filters:
+        - AddRequestHeader=key, value
+      enabled: true

@@ -17,6 +17,8 @@
         <module>user-service</module>
         <module>trade-service</module>
         <module>pay-service</module>
+        <module>services</module>
+        <module>hm-gateway</module>
     </modules>
 
     <parent>
@@ -32,8 +34,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <org.projectlombok.version>1.18.38</org.projectlombok.version>
-        <spring-cloud.version>2023.0.0</spring-cloud.version>
-        <spring-cloud-alibaba.version>2023.0.3.3</spring-cloud-alibaba.version>
+        <spring-cloud.version>2023.0.2</spring-cloud.version> <!-- 修正为2023.0.2 -->
+        <spring-cloud-alibaba.version>2023.0.3.3</spring-cloud-alibaba.version> <!-- 保持不变，已兼容 -->
         <mybatis-plus.version>3.5.12</mybatis-plus.version>
         <hutool.version>5.8.11</hutool.version>
         <mysql.version>8.0.23</mysql.version>
