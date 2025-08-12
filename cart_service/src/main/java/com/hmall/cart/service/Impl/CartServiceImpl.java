@@ -5,7 +5,8 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmall.api.client.ItemClient;
-import com.hmall.api.dto.ItemDTO;
+
+import com.hmall.api.domain.dto.ItemDTO;
 import com.hmall.cart.domain.dto.CartFormDTO;
 import com.hmall.cart.domain.po.Cart;
 import com.hmall.cart.domain.vo.CartVO;
@@ -98,7 +99,6 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     }
 
 
-
     private void handleCartItems(List<CartVO> vos) {
         List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
 
@@ -107,24 +107,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         // 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
         // 2.查询商品
-//        List<ItemDTO> items = itemService.queryItemByIds(itemIds);
-//        if (CollUtils.isEmpty(items)) {
-//            return;
-//        }
-//        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(
-//
-//                instance.getUri()+"/items?ids={ids}",
-//                HttpMethod.GET,
-//                null,
-//                new ParameterizedTypeReference<List<ItemDTO>>() {
-//                },
-//                CollUtils.join(itemIds, ",")
-//        );
-//        List<ItemDTO> items = null;
-//        if (response.getStatusCode().is2xxSuccessful()){
-//
-//            items=response.getBody();
-//        }
+
         List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
         if (CollUtils.isEmpty(items)){
             throw new BadRequestException("购物车不存在商品");
