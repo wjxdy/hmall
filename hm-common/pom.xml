@@ -74,6 +74,8 @@
             <scope>provided</scope>
         </dependency>
 
+
+
         <!--mybatis-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -85,5 +87,6 @@
             <artifactId>mybatis-plus-jsqlparser</artifactId>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 </project>

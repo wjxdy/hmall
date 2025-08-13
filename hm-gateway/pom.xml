@@ -38,12 +38,21 @@
         <version>3.0.2</version>
     </dependency>
 
+
     <dependency>
         <groupId>com.alibaba.cloud</groupId>
         <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         <!-- 2022.0.0.0-RC2 及以上版本支持 Spring Boot 3.x -->
         <version>2022.0.0.0-RC2</version>
     </dependency>
+
+
+        <!--hutool工具包-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- 添加阿里云Maven仓库（确保能下载Alibaba Cloud依赖） -->

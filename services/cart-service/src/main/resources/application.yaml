@@ -1,0 +1,73 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    openfeign:
+      okhttp:
+        enabled: true
+  application:
+    name: cart-service
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://${hm.db.host}:3306/hm-cart?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${hm.db.pw}
+
+# 配置MyBatis的日志输出
+mybatis-plus:
+  #xml文件路径
+  mapperLocations: classpath*:/mapper/*Mapper.xml
+  #别名包路径
+  typeAliasesPackage: com.hmall.**.po
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true    # 开启驼峰命名
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      id-type: auto
+
+logging:
+  level:
+    com.hmall: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"
+
+# Springdoc配置
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+  group-configs:
+    - group: '${hm.swagger.group}'
+      display-name: '黑马商城-${hm.swagger.name}'
+      paths-to-match: '/**'
+      packages-to-scan: ${hm.swagger.package}
+knife4j:
+  enable: true
+  production: false
+  basic:
+    enable: false
+    username: hmall
+    password: 123456
+  setting:
+    swagger-model-name: 实体类列表
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi

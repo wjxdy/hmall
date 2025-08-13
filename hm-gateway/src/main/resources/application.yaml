@@ -36,6 +36,19 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/addresses/**,/users/**
-      default-filters:
-        - AddRequestHeader=key, value
+#      default-filters:
+#        - PrintAny
       enabled: true
+
+hm:
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi
